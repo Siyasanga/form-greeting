@@ -1,0 +1,16 @@
+{
+  "name": "form-greeting",
+  "version": "1.0.0",
+  "description": "Greeting user using a form",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Siyasanga Mtshokotsha",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "express-handlebars": "^3.0.0"
+  }
+}
