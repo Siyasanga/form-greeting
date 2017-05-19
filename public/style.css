@@ -1,0 +1,11 @@
+.wrapper{
+  background-color: Skyblue;
+  margin: auto;
+  width: 80%;
+  text-align: center;
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+.heading{
+  font-size: 5em;
+}
