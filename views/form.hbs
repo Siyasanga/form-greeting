@@ -1,9 +1,21 @@
-<h1 class="heading">Greeting</h1>
 <form class="form" method="post">
   <label for="name">Name :</label>
   <input id="name" type="text" name="name" placeholder="Enter your name">
-  <button id="btn" type="submit" name="button">Greet Me</button>
+  <div class="radios">
+    <label><input type="radio" class="lang" name="lang" value="IsiXhosa">IsiXhosa</label>
+    <label><input type="radio" class="lang" name="lang" value="English">English</label>
+    <label><input type="radio" class="lang" name="lang" value="SeSotho">SeSotho</label>
+  </div>
+  <button id="btn" type="submit" name="button" value="submit">Greet Me</button>
 </form>
+<div class="record">
+  <div class="current">
+    <p>You are number:</p>
+    <h1 id="num">0</h1>
+  </div>
+  <button class="recBtn" type="submit" name="allUsers"><a href="/greeted">View All Users</a></button>
+  <button class="recBtn" type="submit" name="deleteAll"><a href="/greeted">Delete All users</a></button>
+</div>
 <div id="msg">
 {{{msg}}}
 </div>

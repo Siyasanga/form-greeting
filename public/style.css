@@ -5,7 +5,47 @@
   text-align: center;
   padding-bottom: 50px;
   padding-top: 50px;
+  position: relative;
 }
 .heading{
   font-size: 5em;
+}
+.lang{
+  display: block;
+  margin: auto;
+  margin-bottom: 5px;
+}
+label{
+  display: inline-block;
+  text-align: center;
+  margin-top: -5px;
+  margin-bottom: 20px;
+  margin-right: 15px;
+}
+.record{
+  position: relative;
+  left: 650px;
+  top: -170px;
+  width: 130px;
+  text-align: center;
+}
+.current{
+  width: 100%;
+  background-color: pink;
+  padding-bottom: 10px;
+}
+.recBtn{
+  display: block;
+  width: 100%;
+  background-color: orange;
+  border-style: none;
+  margin-top: 1px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+#num{
+  margin-bottom: 0;
+}
+a{
+  text-decoration: none;
 }
