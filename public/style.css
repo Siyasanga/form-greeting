@@ -34,18 +34,38 @@ label{
   background-color: pink;
   padding-bottom: 10px;
 }
+.current p{
+  padding-top: 10px;
+}
 .recBtn{
   display: block;
   width: 100%;
-  background-color: orange;
   border-style: none;
   margin-top: 1px;
+  background-color: orange;
   padding-top: 5px;
   padding-bottom: 5px;
 }
 #num{
+  margin-top: -5px;
   margin-bottom: 0;
+  font-size: 2.5em;
 }
 a{
   text-decoration: none;
+}
+table{
+  margin: auto;
+}
+td{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+}
+.names{
+  text-align: left;
+  border-right: 1px dotted;
+}
+#msg{
+  margin-top: -150px;
 }
