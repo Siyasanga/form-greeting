@@ -6,6 +6,9 @@
   "scripts": {
     "test": "mocha"
   },
+  "engines":{
+    "node":"4.2.4"
+  },
   "author": "Siyasanga Mtshokotsha",
   "license": "ISC",
   "dependencies": {
