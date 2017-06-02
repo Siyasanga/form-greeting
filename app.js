@@ -99,4 +99,8 @@ app.post("/deleteAll",function (req,res) {
   res.redirect("/");
 });
 //***Start Server***
-app.listen(3000);
+var hostname = "127.0.0.1";
+var port = process.env.PORT || 3000;
+app.listen(port,hostname,function() {
+  console.log("Server running at http://"+hostname+":"+port+"/");
+});
