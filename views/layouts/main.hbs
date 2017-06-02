@@ -3,12 +3,24 @@
   <head>
     <meta charset="utf-8">
     <title>Greetings</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div class="wrapper">
-      <h1 class="heading">Greeting</h1>
-      {{{body}}}
+      <nav>
+        <ul>
+          <a href="/deleteAll" id="deleteAll"><li class="nav">Delete All users</li></a>
+          <a href="/greeted"><li class="nav" id="viewAll">View All Users</li></a>
+        </ul>
+      </nav>
+      <div class="main">
+        <h1 class="heading">Greeting</h1>
+        {{{body}}}
+      </div>
+      <div id="delConfirm">
+        <p>Greeted-list cleared succesfully!</p>
+      </div>
     </div>
   </body>
 </html>

@@ -1,14 +1,27 @@
+body{
+  margin: 0;
+}
 .wrapper{
   background-color: Skyblue;
-  margin: auto;
   width: 80%;
   text-align: center;
-  padding-bottom: 50px;
-  padding-top: 50px;
   position: relative;
+  margin: auto;
+  height: 100vh;
+  overflow-y: hidden;
 }
 .heading{
   font-size: 5em;
+  clear: both;
+  padding-bottom: 20px;
+}
+.nav{
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+.main{
+  margin: auto;
+  text-align: center;
 }
 .lang{
   display: block;
@@ -23,9 +36,9 @@ label{
   margin-right: 15px;
 }
 .record{
-  position: relative;
-  left: 650px;
-  top: -170px;
+  position: absolute;
+  left: 700px;
+  top: 177px;
   width: 130px;
   text-align: center;
 }
@@ -36,6 +49,15 @@ label{
 }
 .current p{
   padding-top: 10px;
+}
+ul{
+  list-style: none;
+}
+li{
+  float: right;
+  margin-right: 15px;
+  padding: 10px;
+  background-color: orange;
 }
 .recBtn{
   display: block;
@@ -51,8 +73,8 @@ label{
   margin-bottom: 0;
   font-size: 2.5em;
 }
-a{
-  text-decoration: none;
+a, a:visited, a:hover, a:active {
+  color: inherit;
 }
 table{
   margin: auto;
@@ -65,7 +87,21 @@ td{
 .names{
   text-align: left;
   border-right: 1px dotted;
+  padding-right: 15px;
 }
 #msg{
-  margin-top: -150px;
+  position: static;
+}
+#delConfirm{
+  background-color: green;
+  border-radius: 5px;
+  width: 300px;
+  margin: auto;
+  font-size: 18px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  display: none;
+  margin-top: 50px;
+  position: static;
+  clear: both;
 }

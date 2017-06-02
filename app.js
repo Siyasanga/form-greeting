@@ -63,9 +63,11 @@ app.post('/', function(req,res) {
   igama = req.body.name;
   language = req.body.lang;
   if(igama.length > 0){
-    console.log(igama+" Accepted!");
-    captureName(igama);
-    res.render("form",{msg:generateMsg(igama,language),count:userCounter()});
+    if(language){
+      console.log(igama+" Accepted!");
+      captureName(igama);
+      res.render("form",{msg:generateMsg(igama,language),count:userCounter()});
+    }
   }
 });
 function generateMsg(name,lang) {
@@ -87,6 +89,14 @@ function generateMsg(name,lang) {
 app.get("/greeted", function(req,res) {
   formatTbl();
   res.render("greeted",{tbody:formatTbl()});
+});
+app.get("/deleteAll",function (req,res) {
+  greeted = {};
+  updateGreetBackup();
+  res.render("form",{count:userCounter(),deleteAnim:'<script src="deleteFunction.js" charset="utf-8"></script>'});
+});
+app.post("/deleteAll",function (req,res) {
+  res.redirect("/");
 });
 //***Start Server***
 app.listen(3000);
