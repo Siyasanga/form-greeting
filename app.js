@@ -4,10 +4,7 @@ const body = require('body-parser');
 const fs = require('fs');
 var app = express();
 var greeted = {}; // We start with zero greeted users
-var jsonParser = body.json();
-app.use(body.urlencoded({
-  extended:false
-}));
+app.use(body());
 app.use(express.static('public'));
 app.engine("hbs", exhbs({ defaultLayout:"main",
                           extname:"hbs"}));
@@ -21,7 +18,7 @@ var userCounter = function() {
   return counter;
 }; //end of userCounter
 //**********Updating users by reading them from storage************
-var data = fs.readFile('./data.json',"utf8",function(err,data) {
+var data = fs.readFile(__dirname+'/data.json',"utf8",function(err,data) {
   if(err){
     console.log(err);
   }else {
