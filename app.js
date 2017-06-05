@@ -4,7 +4,10 @@ const body = require('body-parser');
 const fs = require('fs');
 var app = express();
 var greeted = {}; // We start with zero greeted users
-app.use(body());
+var jsonParser = body.json();
+app.use(body.urlencoded({
+  extended:false
+}));
 app.use(express.static('public'));
 app.engine("hbs", exhbs({ defaultLayout:"main",
                           extname:"hbs"}));
