@@ -6,8 +6,8 @@
   "scripts": {
     "test": "mocha"
   },
-  "engines":{
-    "node":"4.2.6"
+  "engines": {
+    "node": "4.2.6"
   },
   "author": "Siyasanga Mtshokotsha",
   "license": "ISC",
@@ -16,6 +16,7 @@
     "e": "0.0.4",
     "express": "^4.15.3",
     "express-handlebars": "^3.0.0",
-    "fs": "0.0.1-security"
+    "fs": "0.0.1-security",
+    "mongoose": "^4.11.6"
   }
 }
