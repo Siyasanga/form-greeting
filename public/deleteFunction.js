@@ -3,6 +3,6 @@ $(document).ready(function() {
   console.log("we back");
   setTimeout(function() {
     document.querySelector('#delConfirm').style.display = "none";
-    window.location = "http://localhost:3000/";
+    window.location = "https://greetings-siya.herokuapp.com/";
   },2500);
 })
