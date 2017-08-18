@@ -1,7 +1,6 @@
 const express = require("express");
 const exhbs = require('express-handlebars');
 const body = require('body-parser');
-const fs = require('fs');
 const user = require('./data.js');
 var app = express();
 app.use(body.urlencoded({
@@ -17,25 +16,22 @@ function captureName(inName,lang,res) {
     if(doc){  // username already exists
       user.update({name:inName}, {$inc: {greetings:1}}, function(err, affected) {
         if(affected) // confirm update
-          console.log("Greetings for "+inName+" successfully updated.");
+          console.log("*********Greetings for "+inName+" successfully updated.*********");
           user.count(function(err, result) {
-              console.log("Count result after updating"+result);
               res.render("form",{msg:generateMsg(inName,lang),count:result});
           });
       });
     } // end updating greetings for the user
-    else {  // new user needs to be recorded
+    else {  // we registering this new user
       var newUser = new user({name:inName, greetings:1});
       newUser.save(function(err, doc) {
-      if(err)
-        console.log(err);
-      else
-        console.log("successfully registered!\n"+doc);
+        if(err)
+          console.log(err);
+        console.log("*********successfully registered!*********\n"+doc);
         user.count(function(err, result) {
-          console.log("Count results: "+result);
           res.render("form",{msg:generateMsg(inName,lang),count:result});
         });
-      });
+      }); // end of save
     } // end registering new user
   }); // end of findOne
 } // end captureName
@@ -54,8 +50,7 @@ function generateMsg(name,lang) {
       break;
   }
   return htmlMsg;
-}
-//*************************************************************
+} // end of generateMsg
 //*********************Format table Data***********************
 function formatTbl(res){
   output = "";
@@ -75,20 +70,18 @@ app.get("/",function(req,res) {
 app.get("/greeted", function(req,res) {
   formatTbl(res);
 });
-// app.get("/deleteAll",function (req,res) {
-//   greeted = {};
-//   updateGreetBackup();
-//   res.render("form",{count:userCounter(),deleteAnim:'<script src="deleteFunction.js" charset="utf-8"></script>'});
-// });
-// app.post("/deleteAll",function (req,res) {
-//   res.redirect("/");
-// });
+app.get("/deleteAll",function (req,res) {
+  user.remove({},function(err) {
+    user.count(function(err, counter) {
+      res.render("form",{count:counter,deleteAnim:'<script src="deleteFunction.js" charset="utf-8"></script>'});
+    })
+  })
+});
 app.post('/', function(req,res) {
     igama = req.body.name;
     language = req.body.lang;
     if(igama.length > 0){
       if(language){
-        console.log(igama+" Accepted!");
         captureName(igama,language,res);
       }
     }
